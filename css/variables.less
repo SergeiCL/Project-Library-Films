@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* Цвета: */
+@main-color: #fff;
+@secondary-color: #000;
+@third-color: #ffd80e;
+
+@main-bc-color: #1a191f;
+@secondary-bc-color: #c02525;
+
+@glass: rgba(255, 255, 255, 0.2);
+@glass-icon: rgba(255, 255, 255, 0.3);
+@gradient: linear-gradient(35deg, red, purple);
+@option: #320a28;
+
+/*Шрифты:*/
+@main-font-family:'Raleway', sans-serif;
+
+/*Миксина для адаптивных размеров:*/
+.size(@prop, @desktop, @mobile) {
+
+    @media screen and (min-width: 1200px) {
+        @{prop}: calc(@desktop * 1px);
+    }
+    @media screen and (max-width: 1200px) {
+        @{prop}: calc((100vw * @desktop) / 1200);
+    }
+    @media screen and (max-width: 480px) {
+        @{prop}: calc(1px * @mobile);
+    }
+}
+
+/*Сброс значений по умолчанию:*/
+ul, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+input, button, textarea, select {
+    border: none;
+    outline: none;
+}

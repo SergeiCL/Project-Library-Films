@@ -1,0 +1,206 @@
+@import (less) 'variables.less';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: @main-font-family;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: -webkit-linear-gradient(left, #1a191f,  #353538);
+}
+::selection{
+  background: #c02525;
+  color: #fff;
+}
+.wrapper{
+  overflow: hidden;  
+  .size(max-width, 390,390);
+  background: #fff;  
+  .size(padding, 30, 30);
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
+  font-family: @main-font-family;
+}
+.wrapper .title{
+  width: 50%;
+  /* font-size: 35px; */
+  .size(font-size, 35, 35);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  font-family: @main-font-family;
+  & * {
+    font-family: @main-font-family;
+  }
+  
+}
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  
+  .size(height, 50, 50);
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  .size(margin-top, 30, 30);
+  .size(margin-bottom, 10, 10);
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+ 
+  .size(font-size, 18, 18);
+  font-weight: 500;
+  text-align: center;
+ 
+  .size(line-height, 48, 48);
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.slide-controls label.signup{
+  color: #000;
+}
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left,  #c02525, #ce5d5d);
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+input[type="radio"]{
+  display: none;
+}
+#signup:checked ~ .slider-tab{
+  left: 50%;
+}
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+#signup:checked ~ label.login{
+  color: #000;
+}
+#login:checked ~ label.signup{
+  color: #000;
+}
+#login:checked ~ label.login{
+  cursor: default;
+  user-select: none;
+}
+
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
+}
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
+}
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-inner form .field{
+ 
+  .size(height, 50, 50);
+  width: 100%;
+
+  .size(margin-top, 20, 20);
+}
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+ 
+  .size(padding-left, 15, 15);
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+ 
+  .size(font-size, 17, 17);
+  transition: all 0.3s ease;
+}
+.form-inner form .field input:focus{
+  border-color:  #f1b978;
+ 
+}
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.3s ease;
+}
+form .field input:focus::placeholder{
+  color: #b3b3b3;
+}
+.form-inner form .pass-link{
+ 
+  .size(margin-top, 5, 5);
+}
+.form-inner form .signup-link{
+  text-align: center;
+
+  .size(margin-top, 30, 30);
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color:  #c02525;
+  text-decoration: none;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+}
+form .btn{
+ 
+  .size(height, 50, 50);
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #c02525, #ce5d5d,#c02525, #ce5d5d);
+  border-radius: 5px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+
+  .size(font-size, 20, 20);
+  font-weight: 500;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
