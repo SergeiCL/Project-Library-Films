@@ -1,0 +1,52 @@
+<main class="container form__container">
+<div class="wrapper">
+    <div class="title-text">
+       <div class="title login loginshow" id="title-login">
+         Авторизация
+       </div>
+       <div class="title signup signupshow" id="title-signup">
+         Регистрация          
+       </div>
+    </div>
+    <div class="form-container">
+       <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login" id="login-action">Вход</label>
+          <label for="signup" class="slide signup" id="signup-action">Регистрация</label>
+          <div class="slider-tab"></div>
+       </div>
+       <div class="form-inner">
+          <form action="#" class="login loginshow" id="login-form">
+             <div class="field">
+                <input type="email" placeholder="Email Address" required id="login-mail">
+             </div>
+             <div class="field">
+                <input type="password" placeholder="Password" required id="login-pass">
+             </div>       
+             <p id="login-error"></p>      
+             <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Войти" id="login-submit">
+             </div>             
+          </form>
+          <form action="#" class="signup signupshow" id="signup-form">
+             <div class="field">
+                <input type="email" placeholder="Email Address" required id="signup-mail">
+             </div>
+             <div class="field">
+                <input type="password" placeholder="Password" required id="signup-pass">
+             </div>
+             <div class="field">
+                <input type="password" placeholder="Confirm password" required  id="signup-pass2">
+             </div>
+             <p id="signup-error"></p>
+             <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Зарегистрироваться" id="signup-submit">
+             </div>
+          </form>
+       </div>
+    </div>
+ </div>
+ </main>
